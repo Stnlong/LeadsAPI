@@ -1,0 +1,23 @@
+How to run the app:
+
+make sure .net sdk is installed
+
+select LeadsAPI and IIS Express and run
+swagger ui should appear which indicates the api is running.
+go back to the angular project and fetching and posting to the API should work.
+
+How to run the unit tests:
+to run the unit tests, right click on the UnitTests project and click run tests.
+
+Code explanation:
+
+LeadsService 
+- GetLeads returns the in memory mock data. Newly added data is included when called.
+- AddLeadsAsync adds to the list in memory. Using async to eventually point to a db in the future.
+
+Controller
+- get calls the service get
+- AddLeads calls the service add. This is where 3rd party would have access to push data.
+
+Tests
+- tests get data, add data, add empty list, add null list
